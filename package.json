@@ -1,0 +1,21 @@
+{
+  "name": "todo-app-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "pnpm run --parallel -r --filter @todo/api --filter @todo/web dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "test:unit": "pnpm -r run test:unit",
+    "test:integration": "pnpm --filter @todo/api run test:integration",
+    "test:e2e": "playwright test",
+    "coverage": "pnpm -r run coverage"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
